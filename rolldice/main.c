@@ -38,7 +38,6 @@ int main(void) {
   P1IFG &= ~BTN; // P1.3 IFG cleared
   P1REN |= BTN; // Enable resistor on BTN
 
-  CCTL0 = CCIE;
   TACTL = TASSEL_2 + MC_2;
   _BIS_SR(LPM4_bits+GIE);
 
