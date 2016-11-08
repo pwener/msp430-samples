@@ -1,2 +1,5 @@
-# msp430-showcases
-Some codes for microcontroller msp430
+# MSP430
+
+Some codes for microcontroller msp430.
+
+I'm using msp430g2553, Code Composer Studio as IDE.
