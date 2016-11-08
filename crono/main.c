@@ -45,8 +45,11 @@ int main(void) {
 	TACTL += MC_3; // Up mode, counts up to TACCR0
 
 	while(1) {
-		while((TACTL & TAIFG) == 0);
-		P1OUT ^= LED0;
-		TACTL &= ~TAIFG; // clear interrupt
+		if((TACTL & TAIFG) == 0) {
+			// TACCR0 value is incrementing until 65536, TAIFG is set when this value counts 0
+		} else {
+			P1OUT ^= LED0;
+			TACTL &= ~TAIFG; // clear interrupt
+		}
 	}
 }
